@@ -241,12 +241,14 @@ describe('importType(name)', function () {
 
   it('correctly identifies scoped modules with `isScopedModule`', () => {
     expect(isScopedModule('@/abc')).to.equal(false);
+    expect(isScopedModule('@/abc/def')).to.equal(false);
     expect(isScopedModule('@a/abc')).to.equal(true);
     expect(isScopedModule('@a/abc/def')).to.equal(true);
   });
 
   it('correctly identifies scoped modules with `isScoped`', () => {
     expect(isScoped('@/abc')).to.equal(false);
+    expect(isScoped('@/abc/def')).to.equal(false);
     expect(isScoped('@a/abc')).to.equal(true);
     expect(isScoped('@a/abc/def')).to.equal(true);
   });
