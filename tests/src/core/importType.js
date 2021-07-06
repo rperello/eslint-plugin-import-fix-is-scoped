@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as path from 'path';
 
-import importType, { isExternalModule, isScopedModule } from 'core/importType';
+import importType, { isExternalModule, isScopedModule, isScoped } from 'core/importType';
 
 import { testContext, testFilePath } from '../utils';
 
@@ -242,5 +242,12 @@ describe('importType(name)', function () {
   it('correctly identifies scoped modules with `isScopedModule`', () => {
     expect(isScopedModule('@/abc')).to.equal(false);
     expect(isScopedModule('@a/abc')).to.equal(true);
+    expect(isScopedModule('@a/abc/def')).to.equal(true);
+  });
+
+  it('correctly identifies scoped modules with `isScoped`', () => {
+    expect(isScoped('@/abc')).to.equal(false);
+    expect(isScoped('@a/abc')).to.equal(true);
+    expect(isScoped('@a/abc/def')).to.equal(true);
   });
 });
