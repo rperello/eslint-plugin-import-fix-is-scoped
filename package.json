@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-import",
-  "version": "2.23.4",
-  "description": "Import with sanity.",
+  "name": "eslint-plugin-import-fix-is-scoped",
+  "version": "2.23.5",
+  "description": "Import with sanity with fix for isScoped function",
   "engines": {
     "node": ">=4"
   },
